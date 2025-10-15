@@ -16,6 +16,7 @@ fetch(apiUrl)
             personDiv.innerHTML = `
                 <h2>${person.name}</h2>
             `;
+            personDiv.classList.add("person");
             people.appendChild(personDiv);
         });
     })
@@ -46,6 +47,7 @@ fetch(starshipsUrl)
             starshipDiv.innerHTML = `
                 <h2>${starship.name}</h2>
             `;
+            starshipDiv.classList.add("starship");
             starships.appendChild(starshipDiv);
         });
     })
