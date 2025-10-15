@@ -13,15 +13,62 @@ body {
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 2rem;
     margin-bottom: 20px;
     width: 100%;
     text-align: center;
 }
 
+
+/*Dropdown Menu*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    border: outset;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: black;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+
+}   
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border: outset;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
 /* CSS Variables */
-.navbar {
+.header {
 
     /* padding: 15px 20px; */
     padding: 0%;
@@ -32,10 +79,10 @@ h1 {
     align-items: flex-start;
     gap: 1em;
     list-style: none;
-    background-color: #b0a4e8
+    background-color: #4c2be1
 }
 
-.navbar-column {
+/* .navbar-column {
     font-size: 1rem;
     font-weight: bold;
     color: black;
@@ -61,7 +108,7 @@ nav a {
 
 nav a:hover {
     background-color: rgba(0, 0, 139, 0.1);
-}
+} */
 
 
 ul {
@@ -71,22 +118,72 @@ ul {
 
 
 li {
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
 
 #people,
 #starships {
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 1.25rem;
-    margin: 1.25rem;
+    padding: 2rem;
+    margin: 2rem;
     border-radius: 0.5rem;
-    max-width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between;
     align-self: center;
     flex-wrap: wrap;
     gap: 1rem;
 
+}
+
+
+.person, .starship {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 2rem);
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+}
+
+
+@media screen and (max-width: 768px) {
+    .person, .starship {
+        flex: 1 1 100%;
+    }
+
+    #people,
+    #starships {
+        flex-direction: column;
+        width: 80%;
+        margin: 1rem auto;
+    }   
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-column {
+        margin: 0.5em 0;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #people,
+    #starships {
+        flex-direction: row;
+        width: 80%;
+        margin: 1rem auto;
+    }
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-column {
+        margin: 0.5em 0;
+    }
 }
