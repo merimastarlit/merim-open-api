@@ -32,7 +32,7 @@ h1 {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 5px;
     border: outset;
@@ -41,13 +41,14 @@ h1 {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 .dropdown-content a {
     color: black;
     padding: 0.75rem 1rem;
     text-decoration: none;
     display: block;
 
-}   
+}
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
@@ -137,22 +138,86 @@ li {
 
 }
 
-
-.person, .starship {
+.person-button,
+.starship-button {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
     padding: 1rem;
+    margin: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(33% - 2rem);
-    box-sizing: border-box;
-    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
     font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+.person-button:hover,
+.starship-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f8f8f8;
+}
+
+.details-section {
+    display: none;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    font-family: "Inter", sans-serif;
+}
+
+.details-section h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.details-section p {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+
+/* Footer styling */
+footer {
+    background-color: #4c2be1;
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer {
+    font-family: "Playfair Display", serif;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: normal;
+    margin: 1rem;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    font-family: "Playfair Display", serif;
+    font-size: 0.8rem;
+}
+
+footer a:hover {
+    opacity: 0.8;
 }
 
 
 @media screen and (max-width: 768px) {
-    .person, .starship {
+
+    .person,
+    .starship {
         flex: 1 1 100%;
     }
 
@@ -161,11 +226,13 @@ li {
         flex-direction: column;
         width: 80%;
         margin: 1rem auto;
-    }   
+    }
+
     .header {
         flex-direction: column;
         align-items: center;
     }
+
     .navbar-column {
         margin: 0.5em 0;
     }
@@ -173,16 +240,19 @@ li {
 
 
 @media (min-width: 769px) and (max-width: 1024px) {
+
     #people,
     #starships {
         flex-direction: row;
         width: 80%;
         margin: 1rem auto;
     }
+
     .header {
         flex-direction: column;
         align-items: center;
     }
+
     .navbar-column {
         margin: 0.5em 0;
     }
