@@ -61,9 +61,11 @@
 
 
 
-
+//Base API URL for people
 const apiUrl = "https://www.swapi.tech/api/people/";
 
+
+//fetch people data from API
 fetch(apiUrl)
     .then((response) => {
         //if response is not ok, throw an error
@@ -72,6 +74,7 @@ fetch(apiUrl)
         }
         return response.json();
     })
+    //process the fetched data
     .then((data) => {
         const people = document.getElementById("people");
         //fetch people data
@@ -119,6 +122,7 @@ function fetchPersonDetails(url) {
                 <p><strong>Birth Year:</strong> ${properties.birth_year}</p>
                 <p><strong>Gender:</strong> ${properties.gender}</p>
             `;
+            //make details section visible
             details.style.display = "block";
         })
         .catch((error) => {
@@ -128,9 +132,12 @@ function fetchPersonDetails(url) {
 
 
 
+//Starships:
 
+//Base API URL for starships
 const starshipsUrl = "https://www.swapi.tech/api/starships/";
 
+//fetch starships data from API
 fetch(starshipsUrl)
     .then((response) => {
         if (!response.ok) {
@@ -138,6 +145,7 @@ fetch(starshipsUrl)
         }
         return response.json();
     })
+    //process the fetched data
     .then((data) => {
         const starships = document.getElementById("starships");
         const starship = data.results;
@@ -147,9 +155,10 @@ fetch(starshipsUrl)
             starshipButton.classList.add("starship-button");
 
             starshipButton.addEventListener("click", () => {
+                //fetch and display starship details on click
                 fetchStarshipDetails(starship.url);
             });
-
+            //append button to starships section
             starships.appendChild(starshipButton);
         });
     })
@@ -157,6 +166,7 @@ fetch(starshipsUrl)
         console.error("Error fetching data:", error);
     });
 
+//function to fetch and display starship details
 function fetchStarshipDetails(url) {
     fetch(url)
         .then((response) => {
@@ -165,6 +175,7 @@ function fetchStarshipDetails(url) {
             }
             return response.json();
         })
+        //process and display starship details
         .then((data) => {
             const details = document.getElementById("starships-details");
             const properties = data.result.properties;
