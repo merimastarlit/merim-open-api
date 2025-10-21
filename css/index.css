@@ -38,7 +38,15 @@ h1 {
     border: outset;
 }
 
-.dropdown:hover .dropdown-content {
+/* Show dropdown on hover for desktop */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Show dropdown on click for mobile */
+.dropdown.active .dropdown-content {
     display: block;
 }
 
@@ -47,7 +55,6 @@ h1 {
     padding: 0.75rem 1rem;
     text-decoration: none;
     display: block;
-
 }
 
 .dropdown-content a:hover {
@@ -247,9 +254,22 @@ footer a:hover {
         width: 80%;
     }
 
+    /* Mobile dropdown styles */
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
 
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
 
-
+    .dropbtn {
+        width: 80%;
+        margin: 1rem auto;
+    }
 }
 
 
